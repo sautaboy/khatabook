@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        list-style: none;
+    }
+
+    #main {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    ul li {
+        display: flex;
+        background: rgb(13, 176, 241);
+
+        padding: 5px;
+        width: 300px;
+        border-radius: 10px;
+        justify-content: space-between;
+        height: 40px;
+    }
+
+    a.title-of-hisab {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        width: 70%;
+        color: #fff;
+    }
+
+    i {
+        font-size: 18px;
+        color: #fff;
+    }
+
+    ul li div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        width: 30%;
+    }
+</style>
+
+<body>
+    <%-include("nav.ejs")%>
+
+        <div id="main">
+            <h1>All Hisab Kitab
+            </h1>
+            <br>
+            <ul>
+
+                <%files.forEach((file)=>{%>
+                    <li>
+                        <a href="/read-hisab/<%=file%>" class="title-of-hisab">
+                            <span>
+                                <%=file%>
+                            </span>
+                            <span><i class="ri-arrow-right-line"></i></span>
+                        </a>
+                        <div>
+                            <a href="/edit-hisab/<%=file%>"><i class="ri-pencil-line" style="color: green;"></i></a>
+                            <a href="/delete/<%=file%>"
+                                onclick="return confirm('Are you sure you want to delete this file?');">
+                                <i class="ri-delete-bin-line" style="color: red;"></i>
+                            </a>
+
+                        </div>
+                    </li>
+
+                    <%})%>
+
+            </ul>
+        </div>
+
+</body>
+
+</html>

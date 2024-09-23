@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #main {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    div.read-text {
+        width: 500px;
+        height: 500px;
+        background: #dadada;
+        padding: 10px;
+        border: navajowhite;
+        outline: navajowhite;
+        border-radius: 5px;
+    }
+
+    input {
+        padding: 10px 30px;
+        background: rgb(13, 176, 241);
+        border: navajowhite;
+        border-radius: 5px;
+        color: #fff;
+    }
+
+    a.edit {
+        color: green;
+        letter-spacing: 1px;
+        font-size: 20px;
+    }
+</style>
+
+<body>
+    <%-include("nav.ejs")%>
+
+        <div id="main">
+            <h1>All Hisab Kitab
+            </h1>
+            <br>
+            <a href="/edit-hisab/<%=filename%>" class="edit">Edit Hisab</a>
+            <br>
+            <br>
+            <div class="read-text">
+                <%=data%>
+            </div>
+        </div>
+</body>
+
+</html>

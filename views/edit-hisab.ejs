@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #main {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    textarea {
+        width: 500px;
+        height: 500px;
+        background: #dadada;
+        padding: 10px;
+        border: navajowhite;
+        outline: navajowhite;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background: rgb(13, 176, 241);
+        border: navajowhite;
+        border-radius: 5px;
+        color: #fff;
+        letter-spacing: 1px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    a.edit {
+        color: green;
+        letter-spacing: 1px;
+        font-size: 20px;
+    }
+</style>
+
+<body>
+    <%-include("nav.ejs")%>
+
+        <div id="main">
+            <h1>All Hisab Kitab
+            </h1>
+            <br>
+            <a class="edit">You are editing <%=filename%></a>
+            <br>
+            <br>
+            <form action="/update/<%=filename%>" method="post">
+                <textarea name="hisab_details" id="">
+                    <%=data%>
+                </textarea>
+                <br>
+                <br>
+                <button>Update</button>
+            </form>
+        </div>
+
+</body>
+
+</html>
